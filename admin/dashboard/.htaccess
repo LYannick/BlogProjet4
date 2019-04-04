@@ -1,0 +1,4 @@
+AuthName "Contenu securisé"
+AuthType Basic
+AuthUserFile "/home/projet4/www/admin/dashboard/.htpasswd"
+Require valid-user
