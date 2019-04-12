@@ -1,15 +1,11 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css" />
-    <title>Administration</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <?php $title = 'Administration'; ?>
   </head>
-  <body>
+  
+  <?php ob_start(); ?>
+    
     <div id="global">
       <header>
         <a href="http://projet4.alwaysdata.net">Retour</a>
@@ -40,15 +36,16 @@
                     <a href="delete.php?id=<?= $billet['id'] ?>">Supprimer</a></td>
             </tr>
             
-      <?php } ?>
+        <?php } ?>
       
       </tbody>
       </table>
       </div>
       </div>
+      
+      <?php $content = ob_get_clean(); ?>
+      <?php require 'template.php'; ?>
 
       <footer id="piedBlog">
       </footer>
-    </div> 
-  </body>
 </html>
