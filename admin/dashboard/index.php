@@ -2,9 +2,15 @@
 
 require 'model.php';
 
-$billets = getBillets();
+try{
+    $billets = getBillets();
+    require 'viewIndex.php';
+}
+ catch (Exception $e){
+     $msgErreur = $e->getMessage();
+     require 'viewError.php';
+ }
 
-require 'viewIndex.php';
 
 
 
