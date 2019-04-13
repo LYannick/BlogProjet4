@@ -1,25 +1,18 @@
 <?php
 
-$bdd = new PDO();
+require 'model.php';
 
-    if(isset($_GET['id']) AND !empty($_GET['id'])) {
-        $get_id = htmlspecialchars($_GET['id']);
-
-        $article = $bdd->prepare('SELECT * FROM T_BILLET WHERE BIL_ID = ?');
-        $article->execute(array($get_id));
-
-        if($article->rowCount() == 1){
-            $article = $article->fetch();
-            $titre = $article['BIL_TITRE'];
-            $contenu = $article['BIL_CONTENU'];
-
-            
-        } else {
-            die("Cet article n'éxiste pas");
-        }
-
-    } else {
-        die('Erreur');
-    }
-
-require 'viewReadPost.php';
+try{
+    if (isset($_GET['id'])){
+        $id = intval($_GET['id']);
+        if ($id != 0) {
+            $post = getPost($id);
+            require 'viewReadPost.php';
+        } else
+            throw new Exception("Identifiant de billet incorrect");
+    } else 
+        throw new Exception("Aucun identifiant de billet");
+} catch (Exception $e){
+    $msgError = $e->getMessage();
+    require 'viewError.php';
+}
