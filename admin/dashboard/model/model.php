@@ -1,6 +1,6 @@
 <?php
 
-abstract class Modele {
+abstract class Model{
 
   // Objet PDO d'accès à la BD
   private $bdd;
@@ -21,7 +21,7 @@ abstract class Modele {
   private function getBdd() {
     if ($this->bdd == null) {
       // Création de la connexion
-      $this->bdd = new PDO('mysql:host=mysql-projet4.alwaysdata.net;dbname=projet4_blog;charset=utf8', 'projet4', 'Moonlight120', 
+      $this->bdd = new PDO(, 
                             array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
     return $this->bdd;
