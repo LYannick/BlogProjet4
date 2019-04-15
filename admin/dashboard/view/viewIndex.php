@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <?php $title = 'Administration'; ?>
+    <?php $this->title = 'Administration'; ?>
   </head>
   
-  <?php ob_start(); ?>
+ 
     
     <div id="global">
       <header>
         <a href="http://projet4.alwaysdata.net">Retour</a>
         <h1 id="titreBlog">Administration</h1>
-        <a href="viewAddPost.php">Ajouter un article</a>
+        <a href="view/viewAddPost.php">Ajouter un article</a>
       </header>
       <div id="contenu">
       <table class="table table-striped table-dark">
@@ -43,6 +43,4 @@
       </div>
       </div>
       
-      <?php $content = ob_get_clean(); ?>
-      <?php require 'view/template.php'; ?>
 </html>
