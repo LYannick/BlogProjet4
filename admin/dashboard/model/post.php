@@ -1,23 +1,22 @@
 <?php 
 
-require_once 'model.php';
+require_once 'model/model.php';
 
 class Post extends Model{
 
-    function getBillets(){
+    public function getPosts(){
     
-        $bdd = getBdd();
-        $billets = $bdd->query('SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as titre, 
-        BIL_CONTENU as contenu FROM T_BILLET ORDER BY BIL_ID DESC');
-        return $billets;
+        $sql = 'SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as titre, 
+        BIL_CONTENU as contenu FROM T_BILLET ORDER BY BIL_ID DESC';
+        $posts = $this->executerRequete($sql);
+        return $posts;
     }
 
-    function getPost($idPost){
+    public function getPost($idPost){
 
-        $bdd = getBdd();
-        $post = $bdd->prepare('SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as title, 
-        BIL_CONTENU as content FROM T_BILLET WHERE BIL_ID = ?');
-        $post->execute(array($idPost));
+        $sql = 'SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as title, 
+        BIL_CONTENU as content FROM T_BILLET WHERE BIL_ID = ?';
+        $post = $this->executerRequete($sql, array($idPost));
         if($post->rowCount() == 1)
             return $post->fetch();
         else
