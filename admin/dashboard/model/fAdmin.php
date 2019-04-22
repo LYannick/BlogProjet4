@@ -1,42 +1,33 @@
 <?php 
 
-require_once 'model.php';
+require_once 'model/model.php';
 
 class Admin extends Model{
 
-    function addPost(){
+    public function addPost($title, $content){
 
-        $bdd = getBdd();
-        $req = $bdd->prepare('INSERT INTO T_BILLET (BIL_TITRE, BIL_CONTENU, BIL_DATE)
-                              VALUES (?, ?, NOW())');
-        $req->execute(array($post_title, $post_content));
-        return $req;
+        $sql = 'INSERT INTO T_BILLET (BIL_TITRE, BIL_CONTENU, BIL_DATE) VALUES (?, ?, NOW())';
+        $this->executerRequete($sql, array($title, $content));
     }
 
-    function editPost(){
+    public function editPosts($edit_id){
 
-        $bdd = getBdd($edit_id);
-        $edit_post = $bdd->prepare('SELECT * FROM T_BILLET WHERE BIL_ID = ?');
-        $edit_post->execute(array($edit_id));
-        if($edit_post->rowCount() == 1){
-            return $edit_post->fetch();
+        $sql = 'SELECT * FROM T_BILLET WHERE BIL_ID = ?';
+        $edit_article = $this->executerRequete($sql, array($edit_id));
+        if($edit_article->rowCount() == 1){
+            return $edit_article->fetch();
         }
     }
 
-    function updatePost(){
+    public function updatePost($edit_title, $edit_content, $edit_id){
 
-        $bdd = getBdd();
-        $update = $bdd->prepare('UPDATE T_BILLET SET BIL_TITRE = ?, BIL_CONTENU = ?, 
-                                 BIL_DATE_EDITION = NOW() WHERE BIL_ID = ?');
-        $update->execute(array($post_title, $post_content, $edit_id));
-        return $update;
+        $sql = 'UPDATE T_BILLET SET BIL_TITRE = ?, BIL_CONTENU = ?, BIL_DATE_EDITION = NOW() WHERE BIL_ID = ?';
+        $this->executerRequete($sql, array($edit_title, $edit_content, $edit_id));
     }
 
-    function deletePost(){
+    public function deletePost($delete_id){
 
-        $bdd = getBdd();
-        $delete = $bdd->prepare('DELETE FROM T_BILLET WHERE BIL_ID = ?');
-        $delete->execute(array($delete_id));
-        return $delete;
+        $sql = 'DELETE FROM T_BILLET WHERE BIL_ID = ?';
+        $this->executerRequete($sql, array($delete_id));
     }
 }
