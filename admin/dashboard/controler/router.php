@@ -39,8 +39,9 @@ class Router {
                 else if($_GET['action'] == 'editpost'){
                     if(isset($_POST['titre'], $_POST['article'])){
                         if(!empty($_POST['titre']) AND !empty($_POST['article'])){
-                            $edit_title = $this->getParametre(htmlspecialchars($_POST, 'titre'));
-                            $edit_content = $this->getParametre(htmlspecialchars($_POST, 'article'));
+                            $edit_title = htmlspecialchars($_POST['titre']);
+                            $edit_content = htmlspecialchars($_POST['article']);
+                            $edit_id = intval($_POST['id']);
                             $this->ctrlEdit->editPost($edit_title, $edit_content, $edit_id);
                         }
                     }
