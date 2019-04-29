@@ -5,7 +5,7 @@
     <script>tinymce.init({ selector: '#mytextarea' });</script>
 </head>
 
-<form method="post" action="index.php?action=editpost">
+<form method="post" action="index.php?action=editpost&id=<?= $_GET['id'];?>">
     <input type="hidden" name="id" id="id" value="<?= $_GET['id'];?>"/>
     <input type="text" name="titre" required  value="<?= $edit['BIL_TITRE'] ?>"/>
     <textarea id="mytextarea" name="article" required><?= $edit['BIL_CONTENU'] ?></textarea>
