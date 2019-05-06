@@ -6,8 +6,7 @@ class Post extends Model{
 
     public function getPosts(){
     
-        $sql = 'SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as titre, 
-        BIL_CONTENU as contenu FROM T_BILLET ORDER BY BIL_ID DESC';
+        $sql = 'SELECT BIL_ID as id, BIL_DATE as date, BIL_TITRE as titre, BIL_CONTENU as contenu FROM T_BILLET ORDER BY BIL_ID DESC LIMIT 0,5';
         $posts = $this->executerRequete($sql);
         return $posts;
     }
