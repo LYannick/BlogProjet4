@@ -7,7 +7,7 @@ class Admin extends Model{
     public function addPost($title, $content){
 
         $sql = 'INSERT INTO T_BILLET (BIL_TITRE, BIL_CONTENU, BIL_DATE) VALUES (?, ?, NOW())';
-        $this->executerRequete($sql, array($title, $content)); 
+        $this->executerRequete($sql, array($title, $content));
     }
 
     public function editPosts($edit_id){
@@ -31,9 +31,22 @@ class Admin extends Model{
         $this->executerRequete($sql, array($delete_id));
     }
 
-    public function getReportCom() {
-        $sql = 'SELECT COM_DATE AS date, COM_AUTEUR AS author, COM_CONTENU AS content FROM T_COMMENTAIRE WHERE COM_REPORTED = 1';
+    public function getReportCom(){
+        
+        $sql = 'SELECT COM_ID AS id, COM_DATE AS date, COM_AUTEUR AS author, COM_CONTENU AS content FROM T_COMMENTAIRE WHERE COM_REPORTED = 1';
         $reports = $this->executerRequete($sql);
         return $reports;
+    }
+
+    public function approveCom($approve_com){
+
+        $sql = 'UPDATE T_COMMENTAIRE SET COM_REPORTED = 0 WHERE COM_ID = ?';
+        $this->executerRequete($sql, array($approve_com));
+    }
+    
+    public function deleteCom($delete_com){
+
+        $sql = 'DELETE FROM T_COMMENTAIRE WHERE COM_ID = ?';
+        $this->executerRequete($sql, array($delete_com));
     }
 }
