@@ -18,4 +18,9 @@ class ControlerPost{
         $view = new View('ReadPost');
         $view->generated(array('post' => $post));
     }
+
+    public function report($report_id){
+
+        $this->post->reportCom($report_id);
+    }
 }
