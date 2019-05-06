@@ -38,4 +38,14 @@ class ControlerIndex{
         $this->index();
     }
 
+    public function deleteC($delete_com){
+
+        $this->admin->deleteCom($delete_com);
+        $this->index();
+    }
+
+    public function approveC($approve_com){
+
+        $this->admin->approveCom($approve_com);
+    }
 }
