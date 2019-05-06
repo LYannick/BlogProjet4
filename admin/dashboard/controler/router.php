@@ -32,17 +32,22 @@ class Router {
                         throw new Exception("Identifiant de billet non défini");
                 } 
                 else if ($_GET['action'] == 'addpost'){
-                    $title = $this->getParametre($_POST, 'titre');
-                    $content = $this->getParametre($_POST, 'article');
-                    $this->ctrlIndex->add($title, $content);
+                    if(isset($_POST['titre'], $_POST['article'])){
+                        if(!empty($_POST['titre']) AND !empty($_POST['article'])){
+                            $title = $this->getParametre($_POST, 'titre');
+                            $content = $this->getParametre($_POST, 'article');
+                            $this->ctrlIndex->add($title, $content);
+                        }
+                    }
                 }
                 else if($_GET['action'] == 'editpost'){
                     if(isset($_POST['titre'], $_POST['article'])){
                         if(!empty($_POST['titre']) AND !empty($_POST['article'])){
-                            $edit_title = htmlspecialchars($_POST['titre']);
-                            $edit_content = htmlspecialchars($_POST['article']);
-                            $edit_id = intval($_POST['id']);
+                            $edit_title = $_POST['titre'];
+                            $edit_content = $_POST['article'];
+                            $edit_id = intval($_GET['id']);
                             $this->ctrlEdit->editPost($edit_title, $edit_content, $edit_id);
+                            $this->ctrlIndex->index();
                         }
                     }
                 }
@@ -53,19 +58,39 @@ class Router {
                     }else
                         throw new Exception("Identifiant de billet invalide");
                 
-                } else if ($_GET['action'] == 'delete'){
+                } 
+                else if ($_GET['action'] == 'delete'){
                     if(isset($_GET['id']) AND !empty($_GET['id'])){
                         $delete_id = htmlspecialchars($_GET['id']);
                         $this->ctrlIndex->delete($delete_id);
+                        
+                    }
+                }   
+            
+                else if ($_GET['action'] == 'deletecom'){
+                    if(isset($_GET['id']) AND !empty($_GET['id'])){
+                        $delete_com = htmlspecialchars($_GET['id']);
+                        $this->ctrlIndex->deleteC($delete_com);
+                        $this->ctrlIndex->index();
+                        
                     }
                 }
+                else if ($_GET['action'] == 'approval'){
+                    if(isset($_GET['id']) AND !empty($_GET['id'])){
+                        $approve_com = htmlspecialchars($_GET['id']);
+                        $this->ctrlIndex->approveC($approve_com);
+                        $this->ctrlIndex->index();
+                    }
+                }
+
                 else    
                     throw new Exception("Action non valide");
             }
+        
             else{
                 $this->ctrlIndex->index();
             }
-        }
+        } 
         catch (Exception $e){
            $this->error($e->getMessage());
         }
@@ -84,3 +109,5 @@ class Router {
             throw new Exception("Paramètre '$nom' absent");
     }
  }
+
+
