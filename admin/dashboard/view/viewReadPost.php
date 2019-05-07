@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <?php $this->title = 'Article'; ?>
-    </head>
+<?php $this->title = 'Article'; ?>
+
+<div class="container contentPage">
+    <a href="http://projet4.alwaysdata.net/admin/dashboard/"><button type="button" class="btn btn-primary">Retour</button></a>
+    <h1 id="readPostTitle"><?= $post['title'] ?></h1>
+    <p><?= $post['content'] ?></p>
+</div>
+
+
     
- 
-        
-        <h1><?= $post['title'] ?></h1>
-        <p><?= $post['content'] ?></p>
-    
-</html>
+

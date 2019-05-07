@@ -1,15 +1,19 @@
 <?php
+
 require_once 'modele/billet.php';
 require_once 'vue/vue.php';
-class ControleurAccueil {
-    private $billet;
-    public function __construct() {
+
+class ControleurAccueil{
+    
+    private $billet;                    
+
+    public function __construct(){                     // Création d'une nouvelle class "Billet"
         $this->billet = new Billet();
     }
-// Affiche la liste de tous les billets du blog
-    public function accueil() {
-        $billets = $this->billet->getBillets();
-        $vue = new Vue("Accueil");
-        $vue->generer(array('billets' => $billets));
+
+    public function accueil(){                         // Création d'une vue "Accueil" et affiche tous les billets
+        $billets = $this->billet->getBillets();        // Appel la fonction qui va afficher les billets
+        $vue = new Vue("Accueil");                     // Création de la vue Accueil
+        $vue->generer(array('billets' => $billets));   // Génère les Billets
     }
 }

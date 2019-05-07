@@ -1,67 +1,10 @@
-.jumbotron {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-    background-color: #fff;
-  }
-  @media (min-width: 768px) {
-    .jumbotron {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-  }
-  
-  .jumbotron p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .jumbotron-heading {
-    font-weight: 300;
-  }
-  
-  .jumbotron .container {
-    max-width: 40rem;
-  }
-  
-  footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
-  footer p {
-    margin-bottom: .25rem;
-  }
+/* ----- GENERAL ----- */
 
-  #formAdd{
-    display: none;
-  }
+.titleAdmin{
+  text-align: center;
+}
 
- #titreBlog{
-   text-align: center;
- }
-
- #btnHide{
-   display: none;
- }
-
- #btnAddPost{
-   display: flex;
-   margin-bottom: 10px;
- }
-
- #btnAdd{
-   margin-right: 10px;
- }
-
- #readPostTitle{
-   text-align: center;
- }
-
- #contentReadPost{
-   margin-top: 20px;
- }
-
- input{
+input{
   padding: 10px;
   margin: 2px;
   border: 1px solid #c8c8c8;
@@ -72,6 +15,74 @@
   margin-top: 20px;
 }
 
+/* ----- BOOTSTRAP JUMBOTRON ----- */
+
+.jumbotron{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+ 
+.jumbotron p:last-child{
+  margin-bottom: 0;
+}
+  
+.jumbotron-heading{
+  font-weight: 300;
+}
+  
+.jumbotron .container{
+  max-width: 40rem;
+}
+  
+/* ----- ADD POST ----- */
+
+#formAdd{
+  display: none;
+}
+
+#btnHide{
+  display: none;
+}
+
+#btnAddPost{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#btnAdd{
+  margin-right: 10px;
+}
+
+/* ----- READ POST ----- */
+
+#readPostTitle{
+  text-align: center;
+}
+
+/* ----- EDIT POST ----- */ 
+
 #aEditPost{
   margin-bottom: 20px;
+}
+
+/* ----- FOOTER ----- */
+
+footer{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+  
+footer p{
+  margin-bottom: .25rem;
+}
+
+/* ----- RESPONSIVE ----- */ 
+
+@media (min-width: 768px){
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }

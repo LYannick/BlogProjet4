@@ -1,4 +1,6 @@
-<?php $this->titre = "Mon Blog - Erreur !"; ?>
+<?php $this->titre = "Jean Forteroche - Erreur !"; ?>
 
-<p><?= $msgErreur ?></p>
+<br/><a href="http://projet4.alwaysdata.net"><button type="button" class="btn btn-primary">Retour</button></a>
+
+<p>Une erreur est survenue : <?= $msgErreur ?></p>
 

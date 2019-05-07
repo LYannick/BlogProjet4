@@ -1,33 +1,56 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
-body {
+/* ----- GLOBAL ----- */
+
+body{
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
 
+h2{
+  font-family: Webdings, sans-serif;
+}
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+p{
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
 
-/* Carousel base class */
-.carousel {
+#mainTitle{
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#postIndex{
+  margin : auto;
+}
+
+#authorPhoto{
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+/* ----- CAROUSEL ----- */
+
+.carousel{
   margin-bottom: 4rem;
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
+
+.carousel-caption{
   bottom: 3rem;
   z-index: 10;
+  border: 1px solid black;
+  background-color: rgb(0, 0, 0, 0.4);
+  padding: 5px;
+  border-radius: 10px;
 }
 
-/* Declare heights because of positioning of img element */
-.carousel-item {
+.carousel-item{
   height: 32rem;
   background-color: #777;
 }
-.carousel-item > img {
+.carousel-item > img{
   position: absolute;
   top: 0;
   left: 0;
@@ -35,48 +58,118 @@ body {
   height: 32rem;
 }
 
-#postIndex{
-  margin : auto;
-}
+#myCarousel{
+    margin-top: 20px;
+  }
 
+/* ----- BOOTSTRAP MARKETING CONTENT ----- */
 
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing .col-lg-4{
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.marketing h2 {
+
+.marketing h2{
   font-weight: 400;
 }
-.marketing .col-lg-4 p {
+
+.marketing .col-lg-4 p{
   margin-right: .75rem;
   margin-left: .75rem;
 }
 
+/* ----- BOOTSTRAP FEATURETTES ----- */
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+.featurette-divider{
+  margin: 5rem 0; 
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
+.featurette-heading{
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
 }
+  
+/* ----- AFFICHAGE DES BILLETS ----- */
 
+#contentBillet{
+  margin-top: 40px;
+}
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+#titlePost{
+  text-align: center;
+}
+
+#formAuthor{
+  border-radius: 25px;
+}
+
+input, textarea{
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px 5px / 5px 5px;
+}
+
+textarea{
+  min-height: 150px;
+  max-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#cAround{
+  box-shadow: 0px 0px rgba(0, 0, 0, 0.6), 0px 6px 60px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#cAuthor{
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(0, 105, 217);
+}
+
+#cDate{
+  font-size: 15px;
+  font-weight: 200;
+  color: black;
+}
+
+#cAuthorDate{
+  display: flex;
+}
+
+#cContent{
+  margin-left: 20px;
+}
+
+#btnReport{
+  font-size: 12px;
+  text-align: left;
+  margin: 0 0 10px 20px;
+}
+
+/* ----- FOOTER ----- */
+  
+#footer{
+  text-align: center;
+}
+
+#text_footer{
+  margin: auto;
+}
+
+/* ----- RESPONSIVE CSS ------ */
+
+@media all and (max-width: 767px){
+  #navBar{
+    padding: 2px;
+  }
+}
 
 @media (min-width: 40em) {
-  /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
@@ -92,86 +185,4 @@ body {
   .featurette-heading {
     margin-top: 7rem;
   }
-}
-  .carousel-caption{
-    border: 1px solid black;
-    background-color: rgb(0, 0, 0, 0.4);
-    padding: 5px;
-    border-radius: 10px;
-  }
-
-  #titlePost{
-    text-align: center;
-  }
-
-  #cAround{
-    box-shadow: 0px 0px rgba(0, 0, 0, 0.6), 0px 6px 60px 0 rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    margin-bottom: 30px;
-  }
-
-  #cAuthor{
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: 800;
-    color: rgb(0, 105, 217);
-  }
-
-  #cDate{
-    font-size: 15px;
-    font-weight: 200;
-    color: black;
-  }
-
-  #cAuthorDate{
-    display: flex;
-  }
-
-  #cContent{
-    margin-left: 20px;
-  }
-
-  #formAuthor{
-    border-radius: 25px;
-  }
-
-  #btnReport{
-    font-size: 12px;
-    text-align: left;
-    margin: 0 0 10px 20px;
-  }
-
-  #myCarousel{
-    margin-top: 20px;
-  }
-
-  #mainTitle{
-    margin: auto;
-  }
-
-  #footer{
-    display: flex;
-  }
-
-  #text_footer{
-    margin: auto;
-  }
-
-  #contentBillet{
-    margin-top: 40px;
-  }
-
-  input, textarea{
-   
-    padding: 10px;
-    margin: 2px;
-    border: 1px solid #c8c8c8;
-    border-radius: 5px 5px / 5px 5px;
-}
-
-textarea{
-    min-height: 150px;
-    max-height: 200px;
-    max-width: 100%;
-    min-width: 100%;
 }
