@@ -17,7 +17,7 @@ abstract class Modele{
     
     private function getBdd(){              // Création de la connexion
         if ($this->bdd == null){
-            $this->bdd = new PDO(,
+            $this->bdd = new PDO('mysql:host=mysql-projet4.alwaysdata.net;dbname=projet4_blog;charset=utf8', 'projet4', 'Moonlight120',
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $this->bdd;
