@@ -33,9 +33,9 @@ class Router{
                         throw new Exception("Identifiant de billet non défini");    // Message d'erreur si l'id du billet n'est pas définis
                 } 
                 else if ($_GET['action'] == 'addpost'){                             // Action appelée quand l'admin AJOUTE un post
-                    if(isset($_POST['titre'], $_POST['article'])){                  // On vérifie que les variables éxiste
+                    if(isset($_POST['titre'], $_POST['article'])){                  // On vérifie que les variables éxistent
                         if(!empty($_POST['titre']) AND !empty($_POST['article'])){  // On vérifie que les champs ne sont pas vide
-                            $title = $this->getParametre($_POST, 'titre');          // Renvois dans un tableau
+                            $title = $this->getParametre($_POST, 'titre');          // Recherche dans un tableau
                             $content = $this->getParametre($_POST, 'article');      // les différentes données
                             $this->ctrlIndex->add($title, $content);                // Appel de la fonction qui va permettre d'ajouter un post
                         }
@@ -60,7 +60,7 @@ class Router{
                         throw new Exception("Identifiant de billet invalide"); // Message d'erreur si l'id d'un post est invalide
                 
                 } 
-                else if ($_GET['action'] == 'delete'){                  // Action appelée quand l'admin SUPPRIME UN POST signalé
+                else if ($_GET['action'] == 'delete'){                  // Action appelée quand l'admin SUPPRIME UN POST
                     if(isset($_GET['id']) AND !empty($_GET['id'])){
                         $delete_id = htmlspecialchars($_GET['id']);     // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
                         $this->ctrlIndex->delete($delete_id);           // Appel de la fonction qui va supprimer un post
