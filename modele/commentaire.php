@@ -17,7 +17,7 @@ class Commentaire extends Modele{
         $this->executerRequete($sql, array($date, $auteur, $contenu, $idBillet));
     }
 
-    public function reportCom($idReport){                                     // Passe la valeur par défaut d'un 
+    public function reportCom($idReport, $idBillet){                          // Passe la valeur par défaut d'un 
         $sql = 'UPDATE T_COMMENTAIRE SET COM_REPORTED = 1 WHERE COM_ID = ?';  // commentaire signalé à 1
         $this->executerRequete($sql, array($idReport));
     }
