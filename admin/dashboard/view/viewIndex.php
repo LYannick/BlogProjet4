@@ -16,7 +16,7 @@
   <div id ="formAdd">
     <form method="POST" action="index.php?action=addpost">
       <input type="text" name="titre" placeholder="Titre" required/>
-      <textarea id="mytextarea" name="article" placeholder="Article" required></textarea>
+      <textarea id="mytextarea" name="article" required>Votre article ...</textarea>
       <input id="post" type="submit" name="valider" class="btn btn-primary" value="Poster l'article"/>
     </form>
   </div>
