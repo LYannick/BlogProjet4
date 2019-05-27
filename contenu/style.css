@@ -18,6 +18,7 @@ p{
 #mainTitle{
   margin: auto;
   font-family: 'Times New Roman', Times, serif;
+  color: #0069d9;
 }
 
 #postIndex{
@@ -29,6 +30,19 @@ p{
   height: auto;
   margin-bottom: 50px;
   border-radius: 10px;
+}
+
+#navBar{
+  border-bottom: 1px solid #0069d9;
+}
+
+#errorMsg{
+  text-align: center;
+  box-shadow: 0px 0px rgba(0, 0, 0, 0.6), 0px 6px 60px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 30px 0 50px 0;
 }
 
 /* ----- CAROUSEL ----- */
@@ -59,8 +73,9 @@ p{
 }
 
 #myCarousel{
-    margin-top: 20px;
-  }
+  margin-top: 9px;
+  padding: 0px;
+}
 
 /* ----- BOOTSTRAP MARKETING CONTENT ----- */
 
@@ -153,7 +168,7 @@ textarea{
 
 /* ----- FOOTER ----- */
   
-#footer{
+footer{
   text-align: center;
 }
 
@@ -167,22 +182,36 @@ textarea{
   #navBar{
     padding: 2px;
   }
+
+  #myCarousel{
+    margin-top: -10px;
+  }
+
+  #mainTitle{
+    font-size: 15px;
+  }
 }
 
-@media (min-width: 40em) {
-  .carousel-caption p {
+@media all and (min-width: 768px) and (max-width: 991px){
+  .imgBillet{
+    height: 200px;
+  }
+}
+
+@media (min-width: 40em){
+  .carousel-caption p{
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
   }
 
-  .featurette-heading {
+  .featurette-heading{
     font-size: 50px;
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
+@media (min-width: 62em){
+  .featurette-heading{
     margin-top: 7rem;
   }
 }
