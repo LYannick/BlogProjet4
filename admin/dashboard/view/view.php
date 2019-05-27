@@ -6,11 +6,11 @@ class View{
     private $title;
 
     public function __construct($action){
-        $this->file = "view/view" . $action . ".php";               // Création d'un chemin pour les view
+        $this->file = "view/view" . $action . ".php";               // Détermination du nom du fichier vue à partir de l'action
     }
 
     public function generated($data){
-         $content = $this->generatedFile($this->file, $data);       // Génère et affiche la vue
+        $content = $this->generatedFile($this->file, $data);       // Génère et affiche la vue
         $view = $this->generatedFile('view/template.php',           // Génère le template commun
             array('title' => $this->title, 'content' => $content));
         echo $view;                                                 // Renvoi la view au navigateur
