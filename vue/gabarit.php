@@ -10,24 +10,22 @@
   </head>
   <body>
     <header>
-      <nav id="navBar" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark container-fluid">
+      <nav id="navBar" class="navbar navbar-expand-md navbar-dark fixed-top bg-light container-fluid">
         <a id="mainTitle" class="navbar-brand" href="http://projet4.alwaysdata.net">Jean Forteroche - Billet simple pour l'Alaska</a>
       </nav>
     </header>
 
-    <main role="main">
-      <div id = "contenu">
-        <?= $contenu ?>
-      </div>
-    </main>
+    <div id = "contenu">
+      <?= $contenu ?>
+    </div>
+
+    <footer class="container">
+      <p id="text_footer"><img src="img/fb_logo.jpg" height="50" width="60" alt="logo fb"/><img src="img/twitter_logo.png" height="60" width="60" alt="logo twitter"/><img src="img/insta_logo.jpg" height="50" width="60" alt="logo instagram"/></p> 
+      <a href="admin/dashboard">Administration</a>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
-
-  <footer class="container" id="footer">
-    <p id="text_footer"><img src="img/fb_logo.jpg" height="50" width="60"/><img src="img/twitter_logo.png" height="60" width="60"/><img src="img/insta_logo.jpg" height="50" width="60"/></p> 
-    <a href="admin/dashboard">Administration</a>
-  </footer>
 </html>

@@ -19,16 +19,13 @@
         <p><input type="submit" value="Commenter" class="btn btn-primary"/></p>
     </form>
     <hr />
-    <header>
-        <h2>Commentaires :</h2><br/>
-    </header>
 
     <?php foreach ($commentaires as $commentaire): ?>
         
         <div id="cAround">
             <p id="cAuthor"><?= $commentaire['auteur'] ?> <span id="cDate">le <?=$commentaire['date']?></span></p>
             <p id="cContent"><?= $commentaire['contenu'] ?></p>
-            <a href="index.php?action=report&id=<?= $commentaire['id'] ?>"><button id="btnReport" type="button" class="btn btn-danger" 
+            <a href="index.php?action=report&com=<?= $commentaire['id'] ?>&billet=<?= $billet['id'] ?>"><button id="btnReport" type="button" class="btn btn-danger" 
             onclick="return(confirm('Voulez-vous vraiment signaler ce commentaire ?'));">Signaler</button></a>
         </div>
     

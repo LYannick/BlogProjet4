@@ -6,7 +6,7 @@ class Vue{
     private $titre;
 
     public function __construct($action){
-        $this->fichier = "vue/vue" . $action . ".php";   // Création d'un chemin pour les vue
+        $this->fichier = "vue/vue" . $action . ".php";   // Détermination du nom du fichier vue à partir de l'action
     }
    
     public function generer($donnees){                              

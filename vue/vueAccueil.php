@@ -1,6 +1,6 @@
 <?php $this->titre = 'Jean-Forteroche'; ?>
 
-<main role="main">
+
   <div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -52,13 +52,13 @@
 
       <div class="col-lg-4">
         <div class="card mb-4 shadow-sm">
-          <img src="img/alaska3.jpg" alt="Photo de l'Alaska" height="180">
+          <img src="img/alaska3.jpg" alt="Photo de l'Alaska" height="180" class="imgBillet">
           <div class="card-body">
             <h2><?= $billet['titre'] ?></h2>
             <p class="card-text"><?= substr($billet['contenu'],0,150) ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>"><button type="button" class="btn btn-primary">Voir plus</button></a>
+                  <a class="btn btn-primary" href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">Voir plus</a>
                 </div>
                 <small class="text-muted"><?= $billet['date'] ?></small>
               </div>
