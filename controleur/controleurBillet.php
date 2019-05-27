@@ -26,7 +26,8 @@ class ControleurBillet{
         $this->billet($idBillet);                                               // Actualise l'affichage du billet
     }
 
-    public function report($idReport){                  // Signal un commentaire
-        $this->commentaire->reportCom($idReport);       // Appel de la fonction qui va signaler un commentaire
+    public function report($idReport, $idBillet){                  // Signal un commentaire
+        $this->commentaire->reportCom($idReport, $idBillet);       // Appel de la fonction qui va signaler un commentaire
+        $this->billet($idBillet);
     }
 }
