@@ -54,7 +54,7 @@ class Router{
                 }   
                 else if ($_GET['action'] == 'edit'){                    // Action appelée quand pour AFFICHER LES VALEURS du post à éditer
                    if(isset($_GET['id']) AND !empty($_GET['id'])){
-                       $edit_id = htmlspecialchars($_GET['id']);        // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
+                       $edit_id = intval($_GET['id']);        // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
                        $this->ctrlEdit->edit($edit_id);                 // Appel de la fonction qui va permettre d'afficher la vue EditPost
                     }else
                         throw new Exception("Identifiant de billet invalide"); // Message d'erreur si l'id d'un post est invalide
@@ -62,20 +62,20 @@ class Router{
                 } 
                 else if ($_GET['action'] == 'delete'){                  // Action appelée quand l'admin SUPPRIME UN POST
                     if(isset($_GET['id']) AND !empty($_GET['id'])){
-                        $delete_id = htmlspecialchars($_GET['id']);     // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
+                        $delete_id = intval($_GET['id']);     // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
                         $this->ctrlIndex->delete($delete_id);           // Appel de la fonction qui va supprimer un post
                     }
                 }   
                 else if ($_GET['action'] == 'deletecom'){               // Action appelée quand l'admin SUPPRIME UN COMMENTAIRE 
                     if(isset($_GET['id']) AND !empty($_GET['id'])){
-                        $delete_com = htmlspecialchars($_GET['id']);    // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
+                        $delete_com = intval($_GET['id']);    // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
                         $this->ctrlIndex->deleteC($delete_com);         // Appel la fonction qui va supprimer un commentaire signalé
                         $this->ctrlIndex->index();                      // Permet de revenir à l'index une fois l'action éxécuté
                     }
                 }
                 else if ($_GET['action'] == 'approval'){                // Action appelée quand l'admin APPROUVE UN COMMENTAIRE 
                     if(isset($_GET['id']) AND !empty($_GET['id'])){
-                        $approve_com = htmlspecialchars($_GET['id']);   // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
+                        $approve_com = intval($_GET['id']);   // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
                         $this->ctrlIndex->approveC($approve_com);       // Appel la fonction qui va approuver un commentaire signalé
                         $this->ctrlIndex->index();                      // Permet de revenir à l'index une fois l'action éxécuté
                     }
