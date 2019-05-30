@@ -28,13 +28,13 @@ class Routeur{
                 else if ($_GET['action'] == 'commenter'){                    // Action appelée quand l'utilisateur AJOUTE un commentaire
                     $auteur = htmlspecialchars($_POST['auteur']);            //
                     $contenu = htmlspecialchars($_POST['contenu']);          //  Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
-                    $idBillet = intval($_POST['id']);                        // 
+                    $idBillet = intval($_POST['id']);                        //  On stock l'id du billet dans une variable --- intval : retourne une valeur numérique entière
                     $this->ctrlBillet->commenter($auteur, $contenu, $idBillet); // Appel de la fonction qui va permettre de commenter
                 }
                 else if ($_GET['action'] == 'report'){                          // Action appelée quand l'utilisateur SIGNALE un commentaire
                     if(isset($_GET['com']) AND !empty($_GET['com']) AND isset($_GET['billet']) AND !empty($_GET['billet'])){             // On vérifie que les variables éxistent
-                        $idReport = htmlspecialchars($_GET['com']);             // Stock et protége l'id en convertissant les caractères spéciaux en entité HTML
-                        $idBillet = htmlspecialchars($_GET['billet']);          //
+                        $idReport = intval($_GET['com']);                       // On stock l'id du billet dans une variable --- intval : retourne une valeur numérique entière
+                        $idBillet = intval($_GET['billet']);                    // On stock l'id du billet dans une variable --- intval : retourne une valeur numérique entière
                         $this->ctrlBillet->report($idReport, $idBillet);        // Appel de la fonction qui va signaler un commentaire
                     }
                 }
